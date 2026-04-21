@@ -1974,23 +1974,23 @@ private:
   /// Determine which word a bit is in.
   ///
   /// \returns the word position for the specified bit position.
-  static unsigned whichWord(unsigned bitPosition) {
-    return bitPosition / APINT_BITS_PER_WORD;
+  static unsigned whichWord(unsigned BitPosition) {
+    return BitPosition / APINT_BITS_PER_WORD;
   }
 
   /// Determine which bit in a word the specified bit position is in.
-  static unsigned whichBit(unsigned bitPosition) {
-    return bitPosition % APINT_BITS_PER_WORD;
+  static unsigned whichBit(unsigned BitPosition) {
+    return BitPosition % APINT_BITS_PER_WORD;
   }
 
   /// Get a single bit mask.
   ///
-  /// \returns a uint64_t with only bit at "whichBit(bitPosition)" set
+  /// \returns a uint64_t with only bit at "whichBit(BitPosition)" set
   /// This method generates and returns a uint64_t (word) mask for a single
   /// bit at a specific bit position. This is used to mask the bit in the
   /// corresponding word.
-  static uint64_t maskBit(unsigned bitPosition) {
-    return 1ULL << whichBit(bitPosition);
+  static uint64_t maskBit(unsigned BitPosition) {
+    return 1ULL << whichBit(BitPosition);
   }
 
   /// Clear unused high order bits
@@ -2017,8 +2017,8 @@ private:
 
   /// Get the word corresponding to a bit position
   /// \returns the corresponding word for the specified bit position.
-  uint64_t getWord(unsigned bitPosition) const {
-    return isSingleWord() ? U.VAL : U.pVal[whichWord(bitPosition)];
+  uint64_t getWord(unsigned BitPosition) const {
+    return isSingleWord() ? U.VAL : U.pVal[whichWord(BitPosition)];
   }
 
   /// Utility method to change the bit width of this APInt to new bit width,
