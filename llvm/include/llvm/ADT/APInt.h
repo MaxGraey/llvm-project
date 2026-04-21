@@ -2004,14 +2004,14 @@ private:
     unsigned WordBits = ((BitWidth - 1) % APINT_BITS_PER_WORD) + 1;
 
     // Mask out the high bits.
-    uint64_t mask = WORDTYPE_MAX >> (APINT_BITS_PER_WORD - WordBits);
+    uint64_t Mask = WORDTYPE_MAX >> (APINT_BITS_PER_WORD - WordBits);
     if (LLVM_UNLIKELY(BitWidth == 0))
-      mask = 0;
+      Mask = 0;
 
     if (isSingleWord())
-      U.VAL &= mask;
+      U.VAL &= Mask;
     else
-      U.pVal[getNumWords() - 1] &= mask;
+      U.pVal[getNumWords() - 1] &= Mask;
     return *this;
   }
 
