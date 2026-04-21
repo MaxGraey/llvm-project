@@ -2102,7 +2102,7 @@ private:
   LLVM_ABI bool isInverseOfSlowCase(const APInt &RHS) const LLVM_READONLY;
 
   /// out-of-line slow case for setBits.
-  LLVM_ABI void setBitsSlowCase(unsigned loBit, unsigned hiBit);
+  LLVM_ABI void setBitsSlowCase(unsigned LoBit, unsigned HiBit);
 
   /// out-of-line slow case for clearBits.
   LLVM_ABI void clearBitsSlowCase(unsigned LoBit, unsigned HiBit);
