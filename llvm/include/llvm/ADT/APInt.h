@@ -1802,9 +1802,7 @@ public:
   /// \returns the log base 2 of this APInt if its an exact power of two, -1
   /// otherwise
   int32_t exactLogBase2() const {
-    if (!isPowerOf2())
-      return -1;
-    return logBase2();
+    return isPowerOf2() ? logBase2() : -1;
   }
 
   /// Compute the square root.
